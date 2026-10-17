@@ -1,0 +1,21 @@
+@import "tailwindcss";
+:root { color-scheme: dark; background: #090a0d; color: #f2efe8; --gold: #d1b274; --gold-deep: #a88b52; }
+@theme inline { --font-sans: var(--font-inter); --font-display: var(--font-playfair); }
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #090a0d; }
+body { min-height: 100vh; margin: 0; background: radial-gradient(ellipse at 48% -20%, rgba(85,68,37,.17), transparent 43%), #090a0d; color: #f2efe8; font-family: var(--font-inter), sans-serif; font-weight: 500; }
+.font-display { font-family: var(--font-playfair), Georgia, serif; }
+.hero-panel { background: radial-gradient(ellipse at 50% 52%, #272119 0%, #131416 38%, #0c0d10 75%); }
+.hero-glow { position: absolute; left: 50%; top: 50%; width: 290px; height: 290px; transform: translate(-50%,-40%); border-radius: 50%; background: rgba(202,166,94,.12); filter: blur(70px); }
+.hero-bottle canvas { position: relative; z-index: 2; }
+.bottle-fallback { position:absolute; left:50%; top:50%; width:120px; height:170px; transform:translate(-50%,-46%); display:flex; flex-direction:column; align-items:center; filter:drop-shadow(0 15px 28px #0009); }
+.bottle-cap { width:40px; height:25px; border-radius:6px 6px 2px 2px; background:linear-gradient(90deg,#806742,#e0c381,#8b7041); }
+.bottle-neck { width:27px; height:17px; background:linear-gradient(90deg,#947b4c,#e6cc8c,#a0834f); }
+.bottle-body { width:115px; height:125px; border:1px solid #e0c58688; border-radius:24px 24px 30px 30px; background:linear-gradient(105deg,#94774388,#dfc27d4d 48%,#70563088); box-shadow:inset 0 0 25px #fce0a126; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:5px; color:#f2dda7; font-family:var(--font-playfair); font-size:14px; letter-spacing:.2em; }
+.bottle-body small { font:500 6px var(--font-inter); letter-spacing:.2em; }
+.category-tile { isolation:isolate; background:#171614; animation:float 5s ease-in-out infinite; }
+.category-tile .tile-image { z-index:-2; opacity:.46; transition:transform .6s, opacity .6s; }
+.category-tile:hover .tile-image { opacity:.62; transform:scale(1.06); }
+.float-2 { animation-delay:-1.6s; }.float-3 { animation-delay:-3.1s; }
+@keyframes float { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-4px) } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; } }
